@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  auth:
+    build:
+      context: ../
+      dockerfile: build/package/Dockerfile
+      args:
+        - app=auth
+
+  characters:
+    build:
+      context: ../
+      dockerfile: build/package/Dockerfile
+      args:
+        - app=characters
