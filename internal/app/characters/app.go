@@ -9,5 +9,5 @@ func Run() {
 	fmt.Println("Running characters")
 	app := server.CreateServer("Characters")
 	ApplyRoutes(app)
-	app.Listen(":3000")
+	app.Listen(":3001")
 }
