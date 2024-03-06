@@ -30,11 +30,8 @@ services:
 
   postgres:
     image: postgres:15.0
-    environment:
-      POSTGRES_DB: "go-micro"
-      POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "admin"
-      PGDATA: "/data"
+    env_file:
+      - ../.env
     networks:
       - base
     ports:
@@ -45,10 +42,8 @@ services:
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4:6.15
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
-      PGADMIN_DEFAULT_PASSWORD: "admin"
-      PGADMIN_CONFIG_SERVER_MODE: "False"
+    env_file:
+      - ../.env
     volumes:
       - pgadmin:/var/lib/pgadmin
     ports:
